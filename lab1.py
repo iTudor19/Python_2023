@@ -8,7 +8,15 @@ def count_vowels(input_string):
     return sum(1 for char in input_string if char in vowels)
 
 def count_occurrences(str1, str2):
-    return str2.count(str1)
+    count = 0
+    len_str1 = len(str1)
+    len_str2 = len(str2)
+
+    for i in range(len_str2 - len_str1 + 1):
+        if str2[i:i + len_str1] == str1:
+            count += 1
+
+    return count
 
 def is_palindrome(num):
     return str(num) == str(num)[::-1]
